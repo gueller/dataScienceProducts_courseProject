@@ -19,12 +19,12 @@ shinyServer(function(input, output) {
         abline(mdl, col="#3bc47d", lwd=2)
         points(hpInput, model1pred(), col="#3bc47d", pch=16, cex=2)
         
-        # plot including color coded cylinders
+        # Checks the checkbox
         if(input$showCyl) {
-        #Set the colors for the number of cylinders
+        # Set the colors for the number of cylinders
         colors <- c("#91732d", "#2d9163", "#912d5e")
         colors2 <- colors[as.factor(mtcars$cyl)]
-        
+        # Plots the data, line and selected point
         plot(mtcars$hp, mtcars$qsec, xlab="Horsepower",
              ylab="Quarter Mile Time", bty="n", pch=16, cex=1.5,
              xlim=c(50, 350), ylim=c(14, 24), col=colors2)
